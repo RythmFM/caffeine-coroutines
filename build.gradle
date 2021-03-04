@@ -1,4 +1,5 @@
 plugins {
+    id 'maven'
     id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
 }
 
@@ -18,4 +19,28 @@ dependencies {
 
     // CAFFEINE
     api "com.github.ben-manes.caffeine:caffeine:$caffeine_version"
+}
+
+sourceCompatibility = 13
+targetCompatibility = 13
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "13"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "13"
+}
+
+wrapper {
+    gradleVersion = "6.6.1"
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
 }
