@@ -1,4 +1,5 @@
 plugins {
+    id 'java-library'
     id 'maven'
     id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
 }
