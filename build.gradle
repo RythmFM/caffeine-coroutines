@@ -1,0 +1,21 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
+}
+
+group 'fm.rythm'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // KOTLIN
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    // KOTLIN COROUTINES
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlin_coroutine_version"
+
+    // CAFFEINE
+    api "com.github.ben-manes.caffeine:caffeine:$caffeine_version"
+}
